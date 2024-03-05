@@ -6,7 +6,7 @@ export default function Creator() {
   return (
     <div className="Creator">
       <a
-        href="https://github.com/VikaKri/weather-app-with-cats"
+        href="https://github.com/VikaKri/weather-with-cats"
         target="_blank"
         rel="noreferrer"
       >
