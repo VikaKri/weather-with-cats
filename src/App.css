@@ -1,38 +1,26 @@
-.App {
+.App .card {
+  background: linear-gradient(
+    180.3deg,
+    rgba(176, 176, 176, 0.8) 5.5%,
+    rgba(111, 107, 99, 0.8) 90.2%
+  );
+  border: 0;
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4);
+}
+
+.App h1 {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App a {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App a:hover {
+  color: rgba(236, 232, 228, 0.885);
 }

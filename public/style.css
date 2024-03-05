@@ -1,0 +1,12 @@
+body {
+  background-image: url("../cat-images/01d.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+body .container {
+  font-family: "Cinzel", serif;
+  max-width: 700px;
+}

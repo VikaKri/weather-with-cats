@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import Search from "./Search";
+import MainCity from "./MainCity";
+import TodayForecast from "./TodayForecast";
+import NextDays from "./NextDays";
+import Creator from "./Creator";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="card mt-0 mb-4">
+        <div className="card-body">
+          <h1>Weather Forecast with Cats</h1>
+        </div>
+      </div>
+      <Search />
+      <MainCity />
+      <TodayForecast />
+      <NextDays />
+      <Creator />
     </div>
   );
 }

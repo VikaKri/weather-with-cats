@@ -1,0 +1,47 @@
+.MainCity h1 .temperatureMain {
+  font-size: 80px;
+  margin: 5px 0 0 5px;
+}
+
+.MainCity h1 .temperatureFormat {
+  font-size: 20px;
+  margin: 10px 0px 0px 10px;
+}
+
+.MainCity h3 {
+  font-size: 20px;
+}
+
+.MainCity h4 {
+  font-size: 15px;
+}
+
+.MainCity a.active {
+  cursor: default;
+}
+
+.MainCity a.active:hover {
+  color: rgb(255, 255, 255);
+}
+
+.MainCity .mainCard {
+  color: rgb(255, 255, 255);
+}
+
+.MainCity .mainIcon {
+  padding-top: 10px;
+  width: 130px;
+}
+
+.MainCity .mainCard .cityInfo {
+  padding: 5px 0 0 35px;
+  text-align: left;
+}
+
+.MainCity .cityTemperature .dateTime {
+  padding: 5px 15px 0 0;
+}
+
+.MainCity .mainCard .image {
+  text-align: center;
+}
