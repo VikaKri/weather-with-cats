@@ -6,7 +6,7 @@ import TodayForecast from "./TodayForecast";
 import NextDays from "./NextDays";
 import Creator from "./Creator";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <div className="card mt-0 mb-4">
@@ -22,5 +22,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
