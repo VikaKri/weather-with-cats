@@ -2,7 +2,6 @@ import React from "react";
 
 import FormattedDate from "./FormattedDate";
 
-import IconImages from "./images/cloudy.png";
 import "./MainCity.css";
 
 export default function MainCity(props) {
@@ -26,8 +25,8 @@ export default function MainCity(props) {
               <form>
                 <img
                   className="mainIcon"
-                  src={IconImages}
-                  alt="Temperature Icon"
+                  src={require(`./images/${props.data.icon}.png`)}
+                  alt={props.data.description}
                 />
               </form>
             </div>

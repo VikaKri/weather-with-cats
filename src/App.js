@@ -17,9 +17,10 @@ export default function App(props) {
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      temperature: Math.round(response.data.main.temp),
       feelsLike: Math.round(response.data.main.feels_like),
       humidity: Math.round(response.data.main.humidity),
+      icon: response.data.weather[0].icon,
+      temperature: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed),
     });
   }
@@ -47,10 +48,11 @@ export default function App(props) {
             <h1>Weather Forecast with Cats</h1>
           </div>
         </div>
+
         <div className="card mt-4 mb-5">
           <div className="card-body">
             <div className="row">
-              <div className="col-10 col-sm-4">
+              <div className="col-8">
                 <form onSubmit={handleSubmit}>
                   <div className="input-group">
                     <input
@@ -65,41 +67,36 @@ export default function App(props) {
                   </div>
                 </form>
               </div>
-              <div className="col-2 col-sm-1">
+              <div className="col-2">
                 <form>
                   <button className="btn btn-outline-secondary" type="button">
                     <i className="fa-solid fa-location-dot yourLocation"></i>
                   </button>
                 </form>
               </div>
-              <div className="col-sm-7">
-                <div className="mt-sm-0 mt-4 d-flex justify-content-center">
-                  <div>
-                    <button
-                      className="btn btn-outline-secondary navigation-city"
-                      type="button"
-                    >
-                      <a href="/">London</a>
-                    </button>
-                  </div>
-                  <div>
-                    <button
-                      className="btn btn-outline-secondary navigation-city"
-                      type="button"
-                    >
-                      <a href="/">New York</a>
-                    </button>
-                  </div>
-                  <div>
-                    <button
-                      className="btn btn-outline-secondary navigation-city"
-                      type="button"
-                    >
-                      <a href="/">Tokio</a>
-                    </button>
-                  </div>
-                </div>
-              </div>
+            </div>
+
+            <div className="gap-4 d-md-flex threeCities">
+              <button
+                className="btn btn-outline-secondary navigation-city"
+                type="button"
+              >
+                <a href="/">London</a>
+              </button>
+
+              <button
+                className="btn btn-outline-secondary navigation-city"
+                type="button"
+              >
+                <a href="/">New York</a>
+              </button>
+
+              <button
+                className="btn btn-outline-secondary navigation-city"
+                type="button"
+              >
+                <a href="/">Tokio</a>
+              </button>
             </div>
           </div>
         </div>
