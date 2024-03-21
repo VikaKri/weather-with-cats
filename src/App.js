@@ -95,7 +95,7 @@ export default function App(props) {
                 className="btn btn-outline-secondary navigation-city"
                 type="button"
               >
-                <a href="/">Tokio</a>
+                <a href="/">Tokyo</a>
               </button>
             </div>
           </div>
