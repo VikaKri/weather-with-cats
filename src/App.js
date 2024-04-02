@@ -15,6 +15,7 @@ export default function App(props) {
     setWeatherData({
       ready: true,
       city: response.data.name,
+      coord: response.data.coord,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       feelsLike: Math.round(response.data.main.feels_like),
@@ -101,7 +102,7 @@ export default function App(props) {
           </div>
         </div>
         <MainCity data={weatherData} />
-        <TodayForecast />
+        <TodayForecast coord={weatherData.coord} />
         <NextDays />
         <Creator />
       </div>
