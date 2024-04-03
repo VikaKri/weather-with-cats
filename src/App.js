@@ -27,7 +27,7 @@ export default function App(props) {
   }
 
   function search() {
-    const apiKey = "9e0fb79c2f66d0cd0dcf06710976a873";
+    const apiKey = "8cac06f7ab6c10287cd06a316ff84a57";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -102,7 +102,11 @@ export default function App(props) {
           </div>
         </div>
         <MainCity data={weatherData} />
-        <TodayForecast coord={weatherData.coord} />
+        <div className="card my-3">
+          <div className="card-body">
+            <TodayForecast coord={weatherData.coord} />
+          </div>
+        </div>
         <NextDays />
         <Creator />
       </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import "./TodayForecast.css";
+import PuffLoader from "react-spinners/PuffLoader";
 
 import WeatherTodayForecast from "./WeatherTodayForecast";
 
@@ -22,33 +23,50 @@ export default function TodayForecast(props) {
   if (loaded) {
     return (
       <div className="TodayForecast">
-        <div className="card my-3 today">
-          <div className="card-body">
-            <div className="row">
-              {forecast.map(function (hourlyForecast, index) {
-                if (index < 6 && index > 0) {
-                  return (
-                    <div className="col" key={index}>
-                      <WeatherTodayForecast data={hourlyForecast} />
-                    </div>
-                  );
-                } else {
-                  return null;
-                }
-              })}
-            </div>
-          </div>
+        <div className="row today todayCard">
+          {forecast.map(function (hourlyForecast, index) {
+            if (index < 6 && index > 0) {
+              return (
+                <div className="col" key={index}>
+                  <WeatherTodayForecast data={hourlyForecast} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
         </div>
       </div>
     );
   } else {
-    let apiKey = "9e0fb79c2f66d0cd0dcf06710976a873";
+    let apiKey = "8cac06f7ab6c10287cd06a316ff84a57";
     let lon = props.coord.lon;
     let lat = props.coord.lat;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
 
-    return null;
+    return (
+      <div className="TodayForecast today todayCard ">
+        <div className="row row-cols-5">
+          {Array(5)
+            .fill(true)
+            .map((item, index) => {
+              return (
+                <div className="col d-flex justify-content-center" key={index}>
+                  <PuffLoader
+                    color="#000000"
+                    loading="true"
+                    size={40}
+                    cssOverride={60}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                  />
+                </div>
+              );
+            })}
+        </div>
+      </div>
+    );
   }
 }
