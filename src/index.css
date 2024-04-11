@@ -1,1 +1,4 @@
-
+body .container {
+  font-family: "Cinzel", serif;
+  max-width: 700px;
+}

@@ -5,13 +5,18 @@
 .NextDays h1 {
   font-size: 17px;
   font-weight: 500;
+  line-height: 50px;
+}
+
+.NextDays .loadingDays {
+  min-height: 360px;
 }
 
 .NextDays .minimumTemperatureNextDays {
   opacity: 0.5;
 }
 
-.NextDays .col-12 {
+.NextDays .col {
   padding: 7px 35px 0 35px;
 }
 

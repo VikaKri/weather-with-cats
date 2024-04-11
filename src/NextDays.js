@@ -1,101 +1,80 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-import ImageIcon from "./images/01d.png";
+import WeatherNextDays from "./WeatherNextDays";
 import "./NextDays.css";
+import PuffLoader from "react-spinners/PuffLoader";
 
-export default function NextDays() {
-  return (
-    <div className="NextDays">
-      <div className="card mt-5 mb-3">
-        <div className="card-body">
-          <div className="row">
-            <div className="col-12">
-              <div className="row underrow">
-                <div className="col underCol">
-                  <h1 className="forecastDay">Monday</h1>
-                </div>
-                <div className="col underCol">
-                  <img className="weatherIcon-day" src={ImageIcon} alt="Icon" />
-                </div>
-                <div className="col underCol">
-                  <h1 className="forecastTemperature">
-                    <span className="maximumTemperatureNextDays">38°</span> /
-                    <span className="minimumTemperatureNextDays">25°</span>
-                  </h1>
-                </div>
-              </div>
-            </div>
+export default function NextDays(props) {
+  let [loaded, setLoaded] = useState(false);
+  let [daysForecast, setDaysForecast] = useState(null);
 
-            <div className="col-12">
-              <div className="row underrow">
-                <div className="col underCol">
-                  <h1 className="forecastDay">Tuesday</h1>
-                </div>
-                <div className="col underCol">
-                  <img className="weatherIcon-day" src={ImageIcon} alt="Icon" />
-                </div>
-                <div className="col underCol">
-                  <h1 className="forecastTemperature">
-                    <span className="maximumTemperatureNextDays">39°</span> /
-                    <span className="minimumTemperatureNextDays">18°</span>
-                  </h1>
-                </div>
-              </div>
-            </div>
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coord]);
 
-            <div className="col-12">
-              <div className="row underrow">
-                <div className="col underCol">
-                  <h1 className="forecastDay">Wednesday</h1>
-                </div>
-                <div className="col underCol">
-                  <img className="weatherIcon-day" src={ImageIcon} alt="Icon" />
-                </div>
-                <div className="col underCol">
-                  <h1 className="forecastTemperature">
-                    <span className="maximumTemperatureNextDays">27°</span> /
-                    <span className="minimumTemperatureNextDays">15°</span>
-                  </h1>
-                </div>
-              </div>
-            </div>
+  function handleResponse(response) {
+    setDaysForecast(response.data.daily);
+    setLoaded(true);
+    console.log(response.data.daily);
+  }
 
-            <div className="col-12">
-              <div className="row underrow">
-                <div className="col underCol">
-                  <h1 className="forecastDay">Thursday</h1>
-                </div>
-                <div className="col underCol">
-                  <img className="weatherIcon-day" src={ImageIcon} alt="Icon" />
-                </div>
-                <div className="col underCol">
-                  <h1 className="forecastTemperature">
-                    <span className="maximumTemperatureNextDays">25°</span> /
-                    <span className="minimumTemperatureNextDays">15°</span>
-                  </h1>
-                </div>
-              </div>
-            </div>
+  if (loaded) {
+    return (
+      <div className="NextDays">
+        <div className="card mt-5 mb-3">
+          <div className="card-body">
+            {daysForecast.map(function (dailyDaysForecast, index) {
+              if (index < 6 && index > 0) {
+                return (
+                  <div className="col" key={index}>
+                    <WeatherNextDays data={dailyDaysForecast} />
+                  </div>
+                );
+              } else {
+                return null;
+              }
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  } else {
+    let apiKey = "8cac06f7ab6c10287cd06a316ff84a57";
+    let lon = props.coord.lon;
+    let lat = props.coord.lat;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
-            <div className="col-12">
-              <div className="row underrow">
-                <div className="col underCol">
-                  <h1 className="forecastDay">Friday</h1>
-                </div>
-                <div className="col underCol">
-                  <img className="weatherIcon-day" src={ImageIcon} alt="Icon" />
-                </div>
-                <div className="col underCol">
-                  <h1 className="forecastTemperature">
-                    <span className="maximumTemperatureNextDays">23°</span> /
-                    <span className="minimumTemperatureNextDays">13°</span>
-                  </h1>
-                </div>
-              </div>
+    axios.get(apiUrl).then(handleResponse);
+
+    return (
+      <div className="NextDays">
+        <div className="card mt-5 mb-3">
+          <div className="card-body">
+            <div className="row loadingDays row-cols-3">
+              {Array(15)
+                .fill(true)
+                .map((item, index) => {
+                  return (
+                    <div
+                      className="col d-flex justify-content-center"
+                      key={index}
+                    >
+                      <PuffLoader
+                        color="#000000"
+                        loading="true"
+                        size={40}
+                        cssOverride={60}
+                        aria-label="Loading Spinner"
+                        data-testid="loader"
+                      />
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }

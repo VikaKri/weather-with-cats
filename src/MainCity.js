@@ -11,7 +11,7 @@ export default function MainCity(props) {
       <div className="card my-4 mainCard">
         <div className="card-body">
           <div className="row">
-            <div className="col-4 cityInfo">
+            <div className="col-5 cityInfo">
               <form>
                 <h2>{props.data.city}</h2>
                 <h3>{props.data.description}</h3>
@@ -22,7 +22,7 @@ export default function MainCity(props) {
                 </h4>
               </form>
             </div>
-            <div className="col-4 image">
+            <div className="col-3 ps-0 image">
               <form>
                 <img
                   className="mainIcon"

@@ -23,18 +23,22 @@ export default function TodayForecast(props) {
   if (loaded) {
     return (
       <div className="TodayForecast">
-        <div className="row today todayCard">
-          {forecast.map(function (hourlyForecast, index) {
-            if (index < 6 && index > 0) {
-              return (
-                <div className="col" key={index}>
-                  <WeatherTodayForecast data={hourlyForecast} />
-                </div>
-              );
-            } else {
-              return null;
-            }
-          })}
+        <div className="card my-3">
+          <div className="card-body">
+            <div className="row today">
+              {forecast.map(function (hourlyForecast, index) {
+                if (index < 6 && index > 0) {
+                  return (
+                    <div className="col" key={index}>
+                      <WeatherTodayForecast data={hourlyForecast} />
+                    </div>
+                  );
+                } else {
+                  return null;
+                }
+              })}
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -47,24 +51,31 @@ export default function TodayForecast(props) {
     axios.get(apiUrl).then(handleResponse);
 
     return (
-      <div className="TodayForecast today todayCard ">
-        <div className="row row-cols-5">
-          {Array(5)
-            .fill(true)
-            .map((item, index) => {
-              return (
-                <div className="col d-flex justify-content-center" key={index}>
-                  <PuffLoader
-                    color="#000000"
-                    loading="true"
-                    size={40}
-                    cssOverride={60}
-                    aria-label="Loading Spinner"
-                    data-testid="loader"
-                  />
-                </div>
-              );
-            })}
+      <div className="TodayForecast ">
+        <div className="card my-3">
+          <div className="card-body">
+            <div className="row today row-cols-5">
+              {Array(5)
+                .fill(true)
+                .map((item, index) => {
+                  return (
+                    <div
+                      className="col d-flex justify-content-center"
+                      key={index}
+                    >
+                      <PuffLoader
+                        color="#000000"
+                        loading="true"
+                        size={40}
+                        cssOverride={60}
+                        aria-label="Loading Spinner"
+                        data-testid="loader"
+                      />
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
         </div>
       </div>
     );

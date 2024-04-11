@@ -8,10 +8,6 @@
   box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4);
 }
 
-.App .todayCard {
-  min-height: 110px;
-}
-
 .App h1 {
   color: rgb(255, 255, 255);
   font-size: 20px;
@@ -34,6 +30,7 @@
 }
 
 .App .navigation-city {
+  font-weight: 600;
   font-size: 16px;
   margin-right: 10px;
 }
