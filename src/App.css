@@ -48,6 +48,10 @@
 }
 
 @media (max-width: 570px) {
+  .App h1 {
+    font-size: 16px;
+  }
+
   .App .threeCities .navigation-city {
     font-size: 14px;
   }
