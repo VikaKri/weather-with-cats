@@ -1,6 +1,6 @@
 .MainCity h1 .temperatureMain {
   font-size: 80px;
-  margin: 5px 0 0 5px;
+  margin: -2px 0 0 5px;
 }
 
 .MainCity h1 .temperatureFormat {
@@ -29,7 +29,6 @@
 }
 
 .MainCity .mainIcon {
-  padding-top: 10px;
   width: 130px;
 }
 
@@ -38,10 +37,73 @@
   text-align: left;
 }
 
-.MainCity .cityTemperature .dateTime {
+.MainCity .dateTime {
   padding: 5px 15px 0 0;
 }
 
 .MainCity .mainCard .image {
+  margin-top: -17px;
   text-align: center;
+}
+
+@media (max-width: 586px) {
+  .MainCity .mainCard .cityInfo {
+    padding: 5px 0 0 15px;
+  }
+  .MainCity h1 .temperatureMain {
+    font-size: 63px;
+    margin-left: -10px;
+  }
+
+  .MainCity .mainIcon {
+    width: 80px;
+  }
+  .MainCity h1 .temperatureFormat {
+    font-size: 10px;
+    margin-left: 0;
+  }
+  .MainCity .dateTime {
+    font-size: 14px;
+  }
+
+  .MainCity .cityTemperature {
+    margin-top: 10px;
+  }
+
+  .MainCity h2 {
+    font-size: 25px;
+  }
+  .MainCity h3 {
+    font-size: 20px;
+  }
+  .MainCity h4 {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 390px) {
+  .MainCity .mainIcon {
+    width: 60px;
+  }
+  .MainCity h1 .temperatureMain {
+    font-size: 50px;
+    margin-left: -13px;
+  }
+
+  .MainCity .dateTime {
+    font-size: 10px;
+  }
+  .MainCity h1 .temperatureFormat {
+    margin: 10px 0px 0px 3px;
+  }
+
+  .MainCity h2 {
+    font-size: 18px;
+  }
+  .MainCity h3 {
+    font-size: 14px;
+  }
+  .MainCity h4 {
+    font-size: 10px;
+  }
 }

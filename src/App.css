@@ -36,5 +36,22 @@
 }
 
 .App .threeCities {
+  display: flex;
   margin: 15px 0 0;
+}
+
+@media (max-width: 570px) {
+  .App .navigation-city {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 345px) {
+  .App .navigation-city {
+    font-size: 11px;
+    margin: 0;
+  }
+  .App .threeCities {
+    justify-content: space-evenly;
+  }
 }

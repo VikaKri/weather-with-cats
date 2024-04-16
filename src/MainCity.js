@@ -11,9 +11,18 @@ export default function MainCity(props) {
       <div className="card my-4 mainCard">
         <div className="card-body">
           <div className="row">
-            <div className="col-5 cityInfo">
+            <div className="col-8 cityInfo">
+              <h2>{props.data.city}</h2>
+            </div>
+            <div className="col-4  ">
+              <div className="dateTime">
+                <FormattedDate date={props.data.date} />
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-sm-5 col-4 cityInfo">
               <form>
-                <h2>{props.data.city}</h2>
                 <h3>{props.data.description}</h3>
                 <h4>
                   <div>Feels like: {props.data.feelsLike} °C</div>
@@ -22,7 +31,7 @@ export default function MainCity(props) {
                 </h4>
               </form>
             </div>
-            <div className="col-3 ps-0 image">
+            <div className="col-sm-3 col-4 pt-4 pt-sm-0 ps-0 pe-0 image">
               <form>
                 <img
                   className="mainIcon"
@@ -31,11 +40,8 @@ export default function MainCity(props) {
                 />
               </form>
             </div>
-            <div className="col-4 cityTemperature">
+            <div className="col-sm-4 col-4  cityTemperature">
               <form>
-                <div className="dateTime">
-                  <FormattedDate date={props.data.date} />
-                </div>
                 <h1>
                   <MainTemperature celsius={props.data.temperature} />
                 </h1>

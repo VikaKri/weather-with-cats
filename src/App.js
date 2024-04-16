@@ -115,7 +115,7 @@ export default function App(props) {
                 </div>
               </div>
 
-              <div className="gap-4 d-md-flex threeCities">
+              <div className="gap-4 threeCities">
                 <form onSubmit={handleSubmit}>
                   <button
                     className="btn btn-outline-secondary navigation-city london"

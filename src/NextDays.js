@@ -27,7 +27,7 @@ export default function NextDays(props) {
             {daysForecast.map(function (dailyDaysForecast, index) {
               if (index < 6 && index > 0) {
                 return (
-                  <div className="col" key={index}>
+                  <div className="col-12" key={index}>
                     <WeatherNextDays data={dailyDaysForecast} />
                   </div>
                 );
