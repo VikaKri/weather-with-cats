@@ -9,6 +9,7 @@ export default function Creator() {
         href="https://github.com/VikaKri/weather-with-cats"
         target="_blank"
         rel="noreferrer"
+        title="GitHub"
       >
         Open-source code
       </a>{" "}
@@ -17,6 +18,7 @@ export default function Creator() {
         href="https://www.linkedin.com/in/victoria-krivorotova-759a08195/"
         target="_blank"
         rel="noreferrer"
+        title="LinkedIn"
       >
         Vika Krivorotova
       </a>

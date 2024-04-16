@@ -23,7 +23,12 @@ export default function MainTemperature(props) {
         <h5>{props.celsius}</h5>
         <div className="temperatureFormat">
           °C /{" "}
-          <a href="/" className="active" onClick={showFahrenheit}>
+          <a
+            href="/"
+            className="active"
+            title="Fahrenheit"
+            onClick={showFahrenheit}
+          >
             F
           </a>
         </div>
@@ -34,7 +39,7 @@ export default function MainTemperature(props) {
       <div className="MainTemperature d-flex">
         <h5>{Math.round(fahrenheit())}</h5>
         <div className="temperatureFormat">
-          <a href="/" className="active" onClick={showCelsius}>
+          <a href="/" className="active" title="Celsius" onClick={showCelsius}>
             °C
           </a>{" "}
           / F
