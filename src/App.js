@@ -114,7 +114,7 @@ export default function App(props) {
               <div className="gap-4 threeCities">
                 <form onSubmit={handleSubmit}>
                   <button
-                    className="btn btn-outline-secondary navigation-city london"
+                    className="btn btn-outline-secondary navigationCity"
                     type="submit"
                     onClick={submitLondon}
                   >
@@ -123,7 +123,7 @@ export default function App(props) {
                 </form>
                 <form onSubmit={handleSubmit}>
                   <button
-                    className="btn btn-outline-secondary navigation-city newYork"
+                    className="btn btn-outline-secondary navigationCity"
                     type="submit"
                     onClick={submitNewYork}
                   >
@@ -132,7 +132,7 @@ export default function App(props) {
                 </form>
                 <form onSubmit={handleSubmit}>
                   <button
-                    className="btn btn-outline-secondary navigation-city tokyo"
+                    className="btn btn-outline-secondary navigationCity"
                     type="submit"
                     onClick={submitTokyo}
                   >
