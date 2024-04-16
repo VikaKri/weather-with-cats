@@ -24,17 +24,19 @@ export default function NextDays(props) {
       <div className="NextDays">
         <div className="card mt-5 mb-3">
           <div className="card-body">
-            {daysForecast.map(function (dailyDaysForecast, index) {
-              if (index < 6 && index > 0) {
-                return (
-                  <div className="col-12" key={index}>
-                    <WeatherNextDays data={dailyDaysForecast} />
-                  </div>
-                );
-              } else {
-                return null;
-              }
-            })}
+            <div className="row">
+              {daysForecast.map(function (dailyDaysForecast, index) {
+                if (index < 6 && index > 0) {
+                  return (
+                    <div className="col-12" key={index}>
+                      <WeatherNextDays data={dailyDaysForecast} />
+                    </div>
+                  );
+                } else {
+                  return null;
+                }
+              })}
+            </div>
           </div>
         </div>
       </div>

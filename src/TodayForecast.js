@@ -54,7 +54,7 @@ export default function TodayForecast(props) {
       <div className="TodayForecast ">
         <div className="card my-3">
           <div className="card-body">
-            <div className="row today row-cols-5">
+            <div className="row row-cols-5 today">
               {Array(5)
                 .fill(true)
                 .map((item, index) => {

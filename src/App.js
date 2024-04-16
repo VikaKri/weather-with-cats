@@ -73,10 +73,6 @@ export default function App(props) {
         style={{
           backgroundImage:
             `url(` + require(`./cat-images/${weatherData.icon}.jpg`) + `)`,
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
         }}
       >
         <div className="container">

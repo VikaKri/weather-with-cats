@@ -31,7 +31,7 @@ export default function MainCity(props) {
                 </h4>
               </form>
             </div>
-            <div className="col-sm-3 col-4 pt-4 pt-sm-0 ps-0 pe-0 image">
+            <div className="col-3 pt-3 pt-sm-0 pe-0 pb-2 image">
               <form>
                 <img
                   className="mainIcon"
@@ -40,11 +40,9 @@ export default function MainCity(props) {
                 />
               </form>
             </div>
-            <div className="col-sm-4 col-4  cityTemperature">
+            <div className="col-sm-4 col-5  cityTemperature">
               <form>
-                <h1>
-                  <MainTemperature celsius={props.data.temperature} />
-                </h1>
+                <MainTemperature celsius={props.data.temperature} />
               </form>
             </div>
           </div>

@@ -46,7 +46,7 @@ export default function WeatherTodayForecast(props) {
         <div className="forecastTimeToday">{hour()}</div>
         <div className="forecastIconToday">
           <img
-            className="weatherIcon-hour"
+            className="weatherIconHour"
             src={require(`./images/${props.data.weather[0].icon}.png`)}
             alt={props.data.weather[0].description}
           />

@@ -30,22 +30,21 @@ export default function WeatherNextDays(props) {
 
   return (
     <div className="row row-cols-3">
-      <div className="d-flex justify-content-center ">
-        <h1 className="forecastDay">{day()}</h1>
+      <div className="col d-flex justify-content-center ">
+        <div className="forecastDay">{day()}</div>
       </div>
-      <div className="d-flex justify-content-center">
+      <div className="col d-flex justify-content-center">
         <img
-          className="weatherIcon-day"
+          className="weatherIconDay"
           src={require(`./images/${props.data.weather[0].icon}.png`)}
           alt={props.data.weather[0].description}
         />
       </div>
-      <div className="d-flex justify-content-center">
-        <h1 className="forecastTemperature">
-          <span className="maximumTemperatureNextDays">{maxTemperature()}</span>{" "}
-          /{" "}
-          <span className="minimumTemperatureNextDays">{minTemperature()}</span>
-        </h1>
+      <div className="col d-flex justify-content-center">
+        <div className="nextDaysTemperature">
+          <span className="maxTemperatureNextDays">{maxTemperature()}</span> /{" "}
+          <span className="minTemperatureNextDays">{minTemperature()}</span>
+        </div>
       </div>
     </div>
   );

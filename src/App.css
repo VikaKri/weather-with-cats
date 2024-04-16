@@ -1,11 +1,8 @@
-.App .card {
-  background: linear-gradient(
-    180.3deg,
-    rgba(176, 176, 176, 0.8) 5.5%,
-    rgba(111, 107, 99, 0.8) 90.2%
-  );
-  border: 0;
-  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4);
+.App {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 .App h1 {
@@ -29,6 +26,16 @@
   color: rgb(255, 255, 255);
 }
 
+.App .card {
+  background: linear-gradient(
+    180.3deg,
+    rgba(176, 176, 176, 0.8) 5.5%,
+    rgba(111, 107, 99, 0.8) 90.2%
+  );
+  border: 0;
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4);
+}
+
 .App .navigation-city {
   font-weight: 600;
   font-size: 16px;
@@ -48,7 +55,7 @@
 
 @media (max-width: 345px) {
   .App .navigation-city {
-    font-size: 11px;
+    font-size: 10px;
     margin: 0;
   }
   .App .threeCities {

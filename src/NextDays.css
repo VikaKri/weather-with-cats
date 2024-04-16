@@ -1,39 +1,38 @@
-.NextDays h1 {
+.NextDays .loadingDays {
+  min-height: 360px;
+}
+
+.NextDays .forecastDay {
+  color: rgb(255, 255, 255);
   font-size: 17px;
   font-weight: 500;
   line-height: 50px;
 }
 
-.NextDays .loadingDays {
-  min-height: 360px;
-}
-
-.NextDays .minimumTemperatureNextDays {
+.NextDays .minTemperatureNextDays {
   opacity: 0.5;
 }
 
-.NextDays .forecastDay {
-  text-align: left;
+.NextDays .nextDaysTemperature {
+  color: rgb(255, 255, 255);
+  line-height: 50px;
+  text-align: right;
 }
 
-.NextDays .weatherIcon-day {
+.NextDays .weatherIconDay {
   display: block;
   margin: auto;
   width: 50px;
 }
 
-.NextDays .forecastTemperature {
-  text-align: right;
-}
-
 @media (max-width: 400px) {
-  .NextDays h1 {
+  .NextDays .forecastDay {
     font-size: 15px;
   }
 }
 
 @media (max-width: 344px) {
-  .NextDays h1 {
+  .NextDays .forecastDay {
     font-size: 13px;
   }
 }

@@ -1,4 +1,4 @@
-.TodayForecast {
+.TodayForecast .today {
   color: rgb(255, 255, 255);
 }
 
@@ -8,22 +8,20 @@
 }
 
 .TodayForecast .today .forecastTimeToday {
-  color: rgb(255, 255, 255);
   padding: 0 0 5px;
 }
 
-.TodayForecast .today .weatherIcon-hour {
+.TodayForecast .today .forecastTemperatureToday {
+  padding: 5px 0 0;
+}
+
+.TodayForecast .today .weatherIconHour {
   width: 50px;
   text-align: center;
 }
 
-.TodayForecast .today .forecastTemperatureToday {
-  color: rgb(255, 255, 255);
-  padding: 5px 0 0;
-}
-
 @media (max-width: 420px) {
-  .TodayForecast .today .weatherIcon-hour {
+  .TodayForecast .today .weatherIconHour {
     width: 35px;
   }
 }
