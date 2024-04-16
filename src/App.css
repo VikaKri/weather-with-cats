@@ -48,13 +48,13 @@
 }
 
 @media (max-width: 570px) {
-  .App .navigation-city {
+  .App .threeCities .navigation-city {
     font-size: 14px;
   }
 }
 
 @media (max-width: 345px) {
-  .App .navigationCity {
+  .App .threeCities .navigationCity {
     font-size: 11px;
     margin: 0;
   }
