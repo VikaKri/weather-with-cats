@@ -111,7 +111,7 @@ export default function App(props) {
                 </div>
               </div>
 
-              <div className="gap-4 threeCities">
+              <div className="gap-sm-4 threeCities">
                 <form onSubmit={handleSubmit}>
                   <button
                     className="btn btn-outline-secondary navigationCity"
