@@ -25,3 +25,12 @@
     width: 35px;
   }
 }
+
+@media (max-width: 332px) {
+  .TodayForecast .today .forecastTimeToday {
+    font-size: 11px;
+  }
+  .TodayForecast .today .weatherIconHour {
+    width: 25px;
+  }
+}
