@@ -55,14 +55,14 @@
   .App .navigationCity {
     font-size: 14px;
   }
+  .App .threeCities {
+    justify-content: space-evenly;
+  }
 }
 
 @media (max-width: 345px) {
   .App .threeCities .navigationCity {
     font-size: 13px;
     margin: 0;
-  }
-  .App .threeCities {
-    justify-content: space-evenly;
   }
 }
