@@ -2,7 +2,7 @@ import React from "react";
 
 export default function WeatherNextDays(props) {
   function day() {
-    let date = new Date(props.data.dt * 1000);
+    let date = new Date(props.data.time * 1000);
     let day = date.getDay();
     let days = [
       "Sunday",
@@ -18,13 +18,13 @@ export default function WeatherNextDays(props) {
   }
 
   function maxTemperature() {
-    let temperature = Math.round(props.data.temp.max);
+    let temperature = Math.round(props.data.temperature.maximum);
 
     return `${temperature}°`;
   }
 
   function minTemperature() {
-    let temperature = Math.round(props.data.temp.min);
+    let temperature = Math.round(props.data.temperature.minimum);
     return `${temperature}°`;
   }
 
@@ -36,8 +36,8 @@ export default function WeatherNextDays(props) {
       <div className="col d-flex justify-content-center">
         <img
           className="weatherIconDay"
-          src={require(`./images/${props.data.weather[0].icon}.png`)}
-          alt={props.data.weather[0].description}
+          src={require(`./images/${props.data.condition.icon}.png`)}
+          alt={props.data.condition.description}
         />
       </div>
       <div className="col d-flex justify-content-center">

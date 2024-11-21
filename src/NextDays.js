@@ -42,10 +42,10 @@ export default function NextDays(props) {
       </div>
     );
   } else {
-    let apiKey = "8cac06f7ab6c10287cd06a316ff84a57";
-    let lon = props.coord.lon;
-    let lat = props.coord.lat;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    let apiKey = "b63aaaf20055735f7aobt7dfe52195a4";
+    let lon = props.coord.longitude;
+    let lat = props.coord.latitude;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${lat}&lon=${lon}&key=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
 

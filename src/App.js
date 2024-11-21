@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 
 import MainCity from "./MainCity";
-import TodayForecast from "./TodayForecast";
+
 import NextDays from "./NextDays";
 import Creator from "./Creator";
 
@@ -14,21 +14,21 @@ export default function App(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
-      city: response.data.name,
-      coord: response.data.coord,
-      date: new Date(response.data.dt * 1000),
-      description: response.data.weather[0].description,
-      feelsLike: Math.round(response.data.main.feels_like),
-      humidity: Math.round(response.data.main.humidity),
-      icon: response.data.weather[0].icon,
-      temperature: Math.round(response.data.main.temp),
+      city: response.data.city,
+      coord: response.data.coordinates,
+      date: new Date(response.data.time * 1000),
+      description: response.data.condition.description,
+      feelsLike: Math.round(response.data.temperature.feels_like),
+      humidity: Math.round(response.data.temperature.humidity),
+      icon: response.data.condition.icon,
+      temperature: Math.round(response.data.temperature.current),
       wind: Math.round(response.data.wind.speed),
     });
   }
 
   function search() {
-    const apiKey = "8cac06f7ab6c10287cd06a316ff84a57";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiKey = "b63aaaf20055735f7aobt7dfe52195a4";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -56,8 +56,8 @@ export default function App(props) {
   function handleGeolocation(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
-    const apiKey = "8cac06f7ab6c10287cd06a316ff84a57";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    const apiKey = "b63aaaf20055735f7aobt7dfe52195a4";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${lat}&lon=${lon}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -143,7 +143,6 @@ export default function App(props) {
             </div>
           </div>
           <MainCity data={weatherData} />
-          <TodayForecast coord={weatherData.coord} />
           <NextDays coord={weatherData.coord} />
           <Creator />
         </div>
